@@ -1,0 +1,237 @@
+/*
+ * Giscus Custom Theme - 丝滑圆润风格
+ * 匹配 Firefly 暗色主题
+ */
+
+:root {
+  --color-canvas-default: #1a1928;
+  --color-canvas-subtle: #151422;
+  --color-canvas-inset: #12111e;
+  --color-border-default: rgba(196, 80, 110, 0.15);
+  --color-border-muted: rgba(196, 80, 110, 0.08);
+  --color-fg-default: #e0def4;
+  --color-fg-muted: #908caa;
+  --color-fg-subtle: #6e6a86;
+  --color-accent-fg: #c4506e;
+  --color-accent-emphasis: #c4506e;
+  --color-btn-bg: #222137;
+  --color-btn-border: rgba(196, 80, 110, 0.2);
+  --color-btn-hover-bg: #2a2940;
+  --color-btn-primary-bg: #c4506e;
+  --color-btn-primary-border: transparent;
+  --color-btn-primary-text: #fff;
+  --color-btn-primary-hover-bg: #d4607e;
+  --color-neutral-muted: rgba(196, 80, 110, 0.08);
+}
+
+/* 全局圆润化 */
+main {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", sans-serif !important;
+}
+
+/* 主容器 */
+.gsc-main {
+  gap: 20px;
+}
+
+/* 评论框 */
+.gsc-comment-box {
+  border-radius: 20px !important;
+  border: 1px solid var(--color-border-default) !important;
+  background: var(--color-canvas-default) !important;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  transition: border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gsc-comment-box:focus-within {
+  border-color: rgba(196, 80, 110, 0.4) !important;
+  box-shadow: 0 4px 24px rgba(196, 80, 110, 0.08), 0 0 0 3px rgba(196, 80, 110, 0.06);
+}
+
+/* 输入区域 */
+.gsc-comment-box-textarea {
+  border-radius: 16px !important;
+  background: var(--color-canvas-inset) !important;
+  border: 1px solid var(--color-border-muted) !important;
+  padding: 16px !important;
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+  transition: border-color 0.3s ease, background 0.3s ease;
+  min-height: 120px !important;
+}
+
+.gsc-comment-box-textarea:focus {
+  border-color: rgba(196, 80, 110, 0.3) !important;
+  background: var(--color-canvas-subtle) !important;
+  outline: none !important;
+}
+
+/* 按钮 */
+.gsc-comment-box-bottom button,
+.btn-primary {
+  border-radius: 12px !important;
+  padding: 8px 20px !important;
+  font-weight: 500 !important;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  border: none !important;
+}
+
+.btn-primary {
+  background: var(--color-btn-primary-bg) !important;
+  color: var(--color-btn-primary-text) !important;
+}
+
+.btn-primary:hover {
+  transform: scale(1.04) !important;
+  box-shadow: 0 4px 16px rgba(196, 80, 110, 0.25) !important;
+}
+
+.btn-primary:active {
+  transform: scale(0.97) !important;
+}
+
+/* 评论卡片 */
+.gsc-comment {
+  border-radius: 20px !important;
+  border: 1px solid var(--color-border-default) !important;
+  background: var(--color-canvas-default) !important;
+  overflow: hidden;
+  transition: border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.gsc-comment:hover {
+  border-color: rgba(196, 80, 110, 0.25) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(196, 80, 110, 0.06);
+}
+
+/* 头像 */
+.gsc-comment .avatar,
+img[alt="avatar"] {
+  border-radius: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
+  border: 2px solid var(--color-border-default) !important;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s ease !important;
+}
+
+.gsc-comment:hover .avatar,
+.gsc-comment:hover img[alt="avatar"] {
+  border-color: var(--color-accent-fg) !important;
+  transform: scale(1.08) !important;
+}
+
+/* 回复区域 */
+.gsc-reply {
+  border-radius: 16px !important;
+  border-left: 3px solid rgba(196, 80, 110, 0.2) !important;
+  margin-left: 12px !important;
+  padding-left: 16px !important;
+}
+
+/* 反应/投票按钮 */
+.gsc-direct-reaction-button-group .DirectReactionButton,
+.gsc-emoji-button {
+  border-radius: 20px !important;
+  padding: 4px 12px !important;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  border: 1px solid var(--color-border-muted) !important;
+}
+
+.gsc-direct-reaction-button-group .DirectReactionButton:hover,
+.gsc-emoji-button:hover {
+  transform: scale(1.08) !important;
+  border-color: rgba(196, 80, 110, 0.3) !important;
+  background: rgba(196, 80, 110, 0.08) !important;
+}
+
+/* Tab 标签 */
+.gsc-header .gsc-left-header em {
+  color: var(--color-accent-fg) !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+}
+
+/* 链接 */
+a {
+  color: var(--color-accent-fg) !important;
+  text-decoration: none !important;
+  transition: opacity 0.2s ease !important;
+}
+a:hover {
+  opacity: 0.8 !important;
+}
+
+/* 时间戳 */
+.gsc-comment-header .gsc-comment-author-header {
+  gap: 8px !important;
+}
+
+/* 登录提示 */
+.gsc-comment-box-is-not-logged-in {
+  border-radius: 20px !important;
+  background: var(--color-canvas-default) !important;
+  border: 1px solid var(--color-border-default) !important;
+  padding: 24px !important;
+  text-align: center;
+}
+
+/* Markdown 预览 */
+.gsc-comment-box-preview {
+  border-radius: 16px !important;
+  background: var(--color-canvas-inset) !important;
+  border: 1px solid var(--color-border-muted) !important;
+  padding: 16px !important;
+}
+
+/* 分割线 */
+hr {
+  border-color: var(--color-border-muted) !important;
+}
+
+/* 加载状态 */
+.gsc-loading {
+  padding: 40px 0;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(196, 80, 110, 0.2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(196, 80, 110, 0.35);
+}
+
+/* 动画入场 */
+.gsc-comment {
+  animation: commentSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes commentSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 各评论依次延迟入场 */
+.gsc-comment:nth-child(1) { animation-delay: 0s; }
+.gsc-comment:nth-child(2) { animation-delay: 0.06s; }
+.gsc-comment:nth-child(3) { animation-delay: 0.12s; }
+.gsc-comment:nth-child(4) { animation-delay: 0.18s; }
+.gsc-comment:nth-child(5) { animation-delay: 0.24s; }
+.gsc-comment:nth-child(n+6) { animation-delay: 0.3s; }
